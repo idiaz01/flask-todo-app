@@ -12,9 +12,6 @@ pipeline {
         }
         
         stage('Build Docker Image'){
-            when {
-                branch 'master'
-            }
             steps {
                 script {
                     app = docker.build(DOCKER_IMAGE_NAME)
@@ -23,9 +20,6 @@ pipeline {
         }
         
         stage('Push Docker Image'){
-            when {
-                branch 'master'
-            }
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'login_dockerhub') {
@@ -36,11 +30,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-            when {
-                branch 'master'
-            }
-            
+        stage('Deploy') {            
             steps {
                 echo 'Deploying to production'
                 echo '-----------------------'
