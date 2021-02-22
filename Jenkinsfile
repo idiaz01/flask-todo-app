@@ -34,7 +34,9 @@ pipeline {
             steps {
                 echo 'Deploying to production'
                 sshagent(credentials: ['prod_server']) {
-                    sh 'ssh idiaz01@34.123.230.35 ./remove_containers.sh; sudo docker pull DOCKER_IMAGE_NAME; sudo docker run -d -p 80:80 DOCKER_IMAGE_NAME;'
+                    sh 'ssh idiaz01@34.123.230.35 ./remove_containers.sh'
+                    sh 'ssh idiaz01@34.123.230.35 sudo docker pull DOCKER_IMAGE_NAME'
+                    sh 'ssh idiaz01@34.123.230.35 sudo docker run -d -p 80:80 DOCKER_IMAGE_NAME'
                 }
             }
         }
