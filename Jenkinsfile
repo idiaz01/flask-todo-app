@@ -34,7 +34,7 @@ pipeline {
             steps {
                 echo 'Deploying to production'
                 sshagent(credentials: ['prod_server']) {
-                    sh 'ssh idiaz01@35.188.103.75 whoami; uptime;'
+                    sh 'ssh idiaz01@34.123.230.35 whoami; uptime;'
                 }
             }
         }
