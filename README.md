@@ -20,7 +20,7 @@ GitHub is integrated with WebHook, so that it can trigger Jenkins as soon as cha
 
 Jenkins is triggered from GitHub and it will execute the Jenkins Pipeline added in this repository. This pipeline is composed of 5 stages:
 
-![Jenkins pipeline stages](./jenkins-pipeline.png)
+![Jenkins pipeline stages](./jenkins-pipeline.PNG)
 
     - Checkout SCM changes
     - Execute tests. For this very basic webapp, no tests were developed. However, it is useful to bear in mind this step. In this case, it will echo a message.
